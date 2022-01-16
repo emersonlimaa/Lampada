@@ -20,11 +20,8 @@ header, main {
     color: white;
     border: none;
     font-size: 1rem;
-    text-transform: uppercase;
     width: 8rem;
     height: 3rem;
-    transform: perspective(rgb(54, 4, 4));
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     box-shadow: 0 0.1rem  0.3rem rgba(0,0,0,0.8);
     cursor: pointer;
 }
