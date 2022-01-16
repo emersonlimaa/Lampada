@@ -2,12 +2,20 @@ const TurnOn = document.getElementById ( "TurnOn" )
 const TurnOff = document.getElementById ( "TurnOff")
 const lamp = document.getElementById ( "lamp" )
 
+function isLampBroken (){
+    return lamp.src.indexOf ('quebrada') > -1
+}
+
 function LampOn () {
-    lamp.src = 'ligada.jpg'
+    if (!isLampBroken () ){
+       lamp.src = 'ligada.jpg' 
+    }
 }
 
 function LampOff () {
-    lamp.src = 'desligada.jpg'
+    if (!isLampBroken () ){
+        lamp.src = 'desligada.jpg' 
+     }
 }
 
 function LampBreak () {
@@ -16,4 +24,6 @@ function LampBreak () {
 
 TurnOff.addEventListener ('click', LampOff)
 TurnOn.addEventListener ('click', LampOn)
+lamp.addEventListener ('mouseover', LampOn)
+lamp.addEventListener ('mouseleave', LampOff)
 lamp.addEventListener ('dblclick', LampBreak)
